@@ -25,6 +25,7 @@ uv run train.py \
 	--gamma=2 \
 	--batch-gpu=12 \
 	--snap=10 \
+ 	--metrics=fid20k_full \
 	--cond=yes \
 	--cfg=stylegan3-t
 
