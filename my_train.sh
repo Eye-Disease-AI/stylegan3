@@ -17,16 +17,18 @@ export PATH=$CUDA_HOME/bin:$PATH
 
 # nuclear cataract
 uv run train.py \
-	--outdir=./training-runs \
-	--data=./datasets/ncsg3 \
-	--kimg 1 \
+	--outdir=$PWD/training-runs \
+	--data=$PWD/datasets/ncsg3 \
+	--kimg 1200 \
 	--gpus=1 \
-	--batch=32 \
+	--batch=12 \
 	--gamma=2 \
-	--batch-gpu=8 \
+	--batch-gpu=12 \
 	--snap=10 \
-	--metrics=fid2k_full \
-	--cfg=stylegan3-r
+	--cond=yes \
+	--cfg=stylegan3-t
+
+#	--cfg=stylegan3-r
 
 # uv run train.py \
 # 	--outdir=./training-runs \
