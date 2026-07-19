@@ -1,6 +1,7 @@
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 
+import dataset.loader
 from dataset.loader import NuclearCataractDataset
 import os
 from torchvision.io import write_png
@@ -17,7 +18,8 @@ def main():
         return
 
     ncd = NuclearCataractDataset(
-        NuclearCataractDataset.TrainValMode(1.0, 0.0)
+        NuclearCataractDataset.TrainValMode(1.0, 0.0),
+        hard_policy=dataset.loader.HardPolicy.DOMINATE,
     )
 
     class_mapping = {
