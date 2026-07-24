@@ -17,10 +17,5 @@ dependencies = [
     "tqdm>=4.68.3",
 ]
 
-[tool.uv.workspace]
-members = [
-    "dataset",
-]
-
 [tool.uv.sources]
-dataset = { workspace = true }
+dataset = { git = "ssh://git@github.com/Eye-Disease-AI/dataset.git", branch = "main" }

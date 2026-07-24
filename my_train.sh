@@ -27,9 +27,9 @@ uv run train.py \
 	--snap=10 \
  	--metrics=fid20k_full \
 	--cond=yes \
-	--cfg=stylegan3-t
+	--cfg=stylegan3-r
+#	--cfg=stylegan3-t
 
-#	--cfg=stylegan3-r
 
 # uv run train.py \
 # 	--outdir=./training-runs \

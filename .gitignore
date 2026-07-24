@@ -4,4 +4,5 @@ __pycache__/
 generations/
 plgr/
 training-runs/
-nuclear_cataract_sg3/
+nuclear_cataract_sg3*/
+dataset/

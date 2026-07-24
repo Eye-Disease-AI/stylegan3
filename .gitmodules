@@ -1,3 +1,0 @@
-[submodule "dataset"]
-	path = dataset
-	url = git@github.com:Eye-Disease-AI/dataset.git
