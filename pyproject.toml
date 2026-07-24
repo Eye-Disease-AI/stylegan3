@@ -5,7 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "dataset",
+    "dataset @ git+ssh://git@github.com/Eye-Disease-AI/dataset.git@main",
     "click>=8.4.2",
     "numpy>=2.5.1",
     "pillow>=12.3.0",
@@ -17,5 +17,5 @@ dependencies = [
     "tqdm>=4.68.3",
 ]
 
-[tool.uv.sources]
-dataset = { git = "ssh://git@github.com/Eye-Disease-AI/dataset.git", branch = "main" }
+[tool.uv]
+package = false
