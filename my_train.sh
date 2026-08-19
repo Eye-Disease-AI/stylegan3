@@ -10,8 +10,7 @@ export PATH=$CUDA_HOME/bin:$PATH
 #	--dest=$PWD/datasets/afhqv2-512x512.zip
 
 # For nuclear cataract:
-# uv run dataset_tool.py --source ./nuclear_cataract_sg3 --dest ./datasets/ncsg3
-# --transform center-crop --resolution=256x256
+# uv run dataset_tool.py --source ./nuclear_cataract_sg3 --dest ./datasets/ncsg3 --transform center-crop --resolution=256x256
 
 # Settings from official stylegan3 repo
 
@@ -25,7 +24,7 @@ uv run train.py \
 	--gamma=2 \
 	--batch-gpu=12 \
 	--snap=10 \
- 	--metrics=fid20k_full \
+ 	--metrics=fid20k_full,kid20k_full,is20k \
 	--cond=yes \
 	--cfg=stylegan3-r
 #	--cfg=stylegan3-t

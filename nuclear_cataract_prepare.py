@@ -18,7 +18,7 @@ def main():
         return
 
     ncd = NuclearCataractDataset(
-        NuclearCataractDataset.TrainValMode(1.0, 0.0),
+        NuclearCataractDataset.TrainValMode(0.8, 0.2),
         hard_policy=dataset.loader.HardPolicy.DOMINATE,
     )
 

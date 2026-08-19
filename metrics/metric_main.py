@@ -113,6 +113,12 @@ def kid50k_full(opts):
     return dict(kid50k_full=kid)
 
 @register_metric
+def kid20k_full(opts):
+    opts.dataset_kwargs.update(max_size=None, xflip=False)
+    kid = kernel_inception_distance.compute_kid(opts, max_real=1000000, num_gen=20000, num_subsets=100, max_subset_size=1000)
+    return dict(kid20k_full=kid)
+
+@register_metric
 def pr50k3_full(opts):
     opts.dataset_kwargs.update(max_size=None, xflip=False)
     precision, recall = precision_recall.compute_pr(opts, max_real=200000, num_gen=50000, nhood_size=3, row_batch_size=10000, col_batch_size=10000)
@@ -167,5 +173,11 @@ def is50k(opts):
     opts.dataset_kwargs.update(max_size=None, xflip=False)
     mean, std = inception_score.compute_is(opts, num_gen=50000, num_splits=10)
     return dict(is50k_mean=mean, is50k_std=std)
+
+@register_metric
+def is20k(opts):
+    opts.dataset_kwargs.update(max_size=None, xflip=False)
+    mean, std = inception_score.compute_is(opts, num_gen=20000, num_splits=10)
+    return dict(is20k_mean=mean, is20k_std=std)
 
 #----------------------------------------------------------------------------
